@@ -1,5 +1,5 @@
-require '/home/derrick/apps/scoreboard_app/scoreboards/mlb_scoreboard.rb'
-require '/home/derrick/apps/scoreboard_app/scoreboards/nba_scoreboard.rb'
+require_relative 'scoreboards/mlb_scoreboard.rb'
+require_relative 'scoreboards/nba_scoreboard.rb'
 
 mlb_teams = ['det','chc']
 
