@@ -7,7 +7,7 @@ module Scoreboards
 		private
 		
 		def output_filepath
-			'/home/derrick/.scoreboard_files/nba_scoreboard'
+			"#{ENV['HOME']}/.scoreboard_files/nba_scoreboard"
 		end		
 
 		def parser
