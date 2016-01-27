@@ -1,12 +1,15 @@
-require_relative 'scoreboards/mlb_scoreboard.rb'
-require_relative 'scoreboards/nba_scoreboard.rb'
+#! /usr/bin/env ruby
 
-mlb_teams = ['det','chc']
+require 'score_scraper'
 
-mlb_scoreboard = Scoreboards::MlbScoreboard.new(mlb_teams)
+#mlb_teams = ['det','chc']
 
-mlb_scoreboard.output_for_conky
+#mlb_scoreboard = ScoreScraper::Scoreboards::Mlb.new(Time.now.strftime('%Y-%m-%d'),mlb_teams)
+#mlb_output_filepath = "/etc/conky_scoreboard.d/.scoreboard_files/mlb_scoreboard"
 
-#nba_scoreboard = Scoreboards::NbaScoreboard.new([])
+#File.open(mlb_output_filepath, 'w'){|file| file.write(mlb_scoreboard.games)}	
 
-#nba_scoreboard.output_for_conky
+nba_scoreboard = ScoreScraper::Scoreboards::Nba.new
+nba_output_filepath = "/etc/conky_scoreboard.d/.scoreboard_files/nba_scoreboard"
+
+File.open(nba_output_filepath, 'w'){|file| file.write(nba_scoreboard.games)}	
